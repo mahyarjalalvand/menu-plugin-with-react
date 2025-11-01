@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: React Menu Shortcode
-Description: نمایش منو با React از طریق شورت‌کد [react_menu]
+Description: نمایش منو با React از طریق شورت‌کد [react_menu slug="menu-name"]
 Version: 1.0
 Author: mahyar
 */

@@ -2,27 +2,20 @@ import React, { useState, useEffect } from "react";
 
 function DrawerMenu({ setToggle, menuSlug }) {
   const [items, setItems] = useState([]);
-  const url = new URL(RMS_DATA.rest_url);
-  console.log(url);
   useEffect(() => {
     if (!menuSlug) return;
     const url = new URL(RMS_DATA.rest_url);
     url.searchParams.append("slug", menuSlug);
     fetch(url)
-      .then((res) => {
-        if (!res.ok) throw new Error(res.status + " " + res.statusText);
-        return res.json();
-      })
-      .then((data) => setItems(data))
-      .catch(console.error);
+      .then((res) => res.json())
+      .then((res) => setItems(res))
+      .catch((err) => console.log(err));
   }, [menuSlug]);
-  const closeHandler = () => {
-    setToggle((prev) => !prev);
-  };
   console.log(items);
+  const closeHandler = () => setToggle((prev) => !prev);
   return (
     <div className="fixed inset-0 bg-black/60">
-      <div className="w-1/4 bg-white h-full relative px-3 pt-8">
+      <div className="w-1/4 bg-white h-full relative px-3 pt-10">
         <span className="w-full [&>i]:*:size-5 [&>i]:cursor-pointer flex items-center justify-end p-2">
           <i onClick={closeHandler}>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">

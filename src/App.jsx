@@ -4,9 +4,7 @@ import "./style.css";
 function App({ slug }) {
   const [toggle, setToggle] = useState(false);
 
-  const toggleMenu = () => {
-    setToggle((toggle) => !toggle);
-  };
+  const toggleMenu = () => setToggle((toggle) => !toggle);
 
   return (
     <div className="container pt-7 relative ">
