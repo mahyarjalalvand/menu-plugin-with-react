@@ -3,7 +3,6 @@ import DrawerMenu from "./components/DrawerMenu";
 import "./style.css";
 function App({ slug }) {
   const [toggle, setToggle] = useState(false);
-
   const toggleMenu = () => setToggle((toggle) => !toggle);
 
   return (

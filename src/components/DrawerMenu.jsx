@@ -14,7 +14,7 @@ function DrawerMenu({ setToggle, menuSlug }) {
   console.log(items);
   const closeHandler = () => setToggle((prev) => !prev);
   return (
-    <div className="fixed inset-0 bg-black/60">
+    <div className="fixed inset-0 bg-black/70">
       <div className="w-1/4 bg-white h-full relative px-3 pt-10">
         <span className="w-full [&>i]:*:size-5 [&>i]:cursor-pointer flex items-center justify-end p-2">
           <i onClick={closeHandler}>
